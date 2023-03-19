@@ -3,9 +3,10 @@ from odoo.extensions import ValidationError
 
 
 class customer(models.Model):
-    _name='inherit_crm'
+
     _inherit = 'res.partner'
     related_patient_id = fields.Many2one('hms.patient', string='Related Patient')
+    
     vat=fields.Char(required=True)
     email = fields.Char()
 # ===============================================(check email,) ===============================
@@ -18,6 +19,7 @@ class customer(models.Model):
                 if isemailexist:
                     raise exceptions.ValidationError('email already in use in patient')
 # ===================================(delete validation linked to patient in hms)===============
+#   no decerator on at and write 
     def unlink(self):
         for record in self:
             if record.related_patient_id:
