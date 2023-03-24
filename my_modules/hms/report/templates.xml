@@ -1,0 +1,82 @@
+<odoo>
+    <data>
+        <template id="hms_patient_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="rec">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="text-center">
+                                        <h3 class="text-center" style="color:orange;font-weight:900;">Patient Status Report</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div>
+                                        <span style="font-size:24px;font-weight:900;">First Name</span>
+                                        <span t-esc="rec.First_name" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">Last Name</span>
+                                        <span t-esc="rec.Last_name" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">Birth Date</span>
+                                        <span t-esc="rec.Birth_date" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">Email</span>
+                                        <span t-esc="rec.email" style="font-size:20px"/>
+                                    </div>
+                                    <div style="padding-left:160px">
+                                        <span style="font-size:24px;font-weight:900;">Doctor</span>
+                                        <span t-esc="rec.doctor_id.First_name" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">Blood Type</span>
+                                        <span t-esc="rec.Blood_Type" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">PCR</span>
+                                        <span t-esc="rec.PCR" style="font-size:20px"/>
+                                        <br/>
+                                        <span style="font-size:24px;font-weight:900;">Age</span>
+                                        <span t-esc="rec.Age" style="font-size:20px"/>
+                                        <br/>
+                                    </div>
+                                    <div style="margin-left:100px">
+                                        <img t-attf-src="data:image/*;base64,{{rec.image}}"
+                                             style="width:130px;height:130px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.7), 0 3px 10px 0 rgba(0, 0, 0, 0.3);"/>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="text-center" style="margin-top:50px">
+                                    <h3 style="color:orange;font-weight:900;">Log History</h3>
+                                </div>
+                                <div>
+                                    <table class="table" style="border: 1px solid orange;">
+                                        <tr class="table-warning">
+                                            <th style="font-weight:900;">User</th>
+                                            <th style="font-weight:900;">Date</th>
+                                            <th style="font-weight:900;">Info</th>
+                                        </tr>
+                                        <t t-foreach="rec.log_id" t-as="log">
+                                            <tr>
+                                                <th>
+                                                    <span t-esc="log.create_uid"/>
+                                                </th>
+                                                <th>
+                                                    <span t-esc="log.create_date"/>
+                                                </th>
+                                                <th>
+                                                    <span t-esc="log.description"/>
+                                                </th>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
