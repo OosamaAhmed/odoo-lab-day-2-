@@ -5,6 +5,7 @@ from datetime import datetime
 
 class Hospitals(models.Model):
     _name ='hms.patient'
+    
     FirsName=fields.Char()
     LastName=fields.Char()
     BirthDate=fields.Date()

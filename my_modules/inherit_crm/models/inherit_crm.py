@@ -1,16 +1,13 @@
 from odoo import models, fields, api,exceptions
-from odoo.extensions import ValidationError
 
 
 class customer(models.Model):
-
     _inherit = 'res.partner'
-    related_patient_id = fields.Many2one('hms.patient', string='Related Patient')
-    
     vat=fields.Char(required=True)
+    related_patient_id = fields.Many2one('hms.patient')
     email = fields.Char()
 # ===============================================(check email,) ===============================
-    @api.constrains('email')
+    @api.constrains('related_patient_id')
     def check_email_Valid(self):
         for field in self:
 
