@@ -16,23 +16,23 @@
                                 <div class="row">
                                     <div>
                                         <span style="font-size:24px;font-weight:900;">First Name</span>
-                                        <span t-esc="rec.First_name" style="font-size:20px"/>
+                                        <span t-esc="rec.FirstName" style="font-size:20px"/>
                                         <br/>
                                         <span style="font-size:24px;font-weight:900;">Last Name</span>
-                                        <span t-esc="rec.Last_name" style="font-size:20px"/>
+                                        <span t-esc="rec.LastName" style="font-size:20px"/>
                                         <br/>
                                         <span style="font-size:24px;font-weight:900;">Birth Date</span>
-                                        <span t-esc="rec.Birth_date" style="font-size:20px"/>
+                                        <span t-esc="rec.BirthDate" style="font-size:20px"/>
                                         <br/>
                                         <span style="font-size:24px;font-weight:900;">Email</span>
-                                        <span t-esc="rec.email" style="font-size:20px"/>
+                                        <span t-esc="rec.Email" style="font-size:20px"/>
                                     </div>
                                     <div style="padding-left:160px">
                                         <span style="font-size:24px;font-weight:900;">Doctor</span>
-                                        <span t-esc="rec.doctor_id.First_name" style="font-size:20px"/>
+                                        <span t-esc="rec.doctors_id.firstname" style="font-size:20px"/>
                                         <br/>
                                         <span style="font-size:24px;font-weight:900;">Blood Type</span>
-                                        <span t-esc="rec.Blood_Type" style="font-size:20px"/>
+                                        <span t-esc="rec.BloodType" style="font-size:20px"/>
                                         <br/>
                                         <span style="font-size:24px;font-weight:900;">PCR</span>
                                         <span t-esc="rec.PCR" style="font-size:20px"/>
